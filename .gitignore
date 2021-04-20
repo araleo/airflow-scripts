@@ -1,0 +1,6 @@
+.env
+.idea
+/logs
+/plugins
+__pycache__/
+cred.txt
