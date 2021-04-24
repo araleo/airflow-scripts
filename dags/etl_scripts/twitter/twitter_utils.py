@@ -8,6 +8,20 @@ import json
 import pandas as pd
 
 
+def save_as_json(tweet):
+    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")
+    with open(f"tweet_{now}.json", "w") as f:
+        json.dump(tweet, f)
+
+
+def save_file(filepath, data):
+    if not data:
+        return
+    with open(filepath, "w") as f:
+        for d in data:
+            f.write(json.dumps(d) + "\n")
+            
+
 def timestamp_to_datetime(ts):
     try:
         _ts = int(ts)

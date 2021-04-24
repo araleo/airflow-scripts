@@ -1,7 +1,7 @@
-import os
-
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
+
+from etl_scripts.DB.constants import SQL_ALCH_CONN_STRING
 
 
 class SqlAlchConn:
@@ -24,4 +24,4 @@ class SqlAlchConn:
 
     def open(self):
         # "postgresql://user:pwd@host:port/database"
-        return create_engine(os.environ["SQL_ALCH_CONN_STRING"])
+        return create_engine(SQL_ALCH_CONN_STRING)

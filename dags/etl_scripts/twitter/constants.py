@@ -1,21 +1,27 @@
 
-ERROR_LOG_PATH = "/home/leonardo/twitter_stf/data/errorlog.txt"
+SCREEN_NAMES = ["STF_oficial", "gilmarmendes", "LuizFux", "LRobertoBarroso", "alexandre", "nunesmarquesk"]
 
-PRO_DIR = "/home/leonardo/twitter_stf/data/processed"
+ERROR_LOG_PATH = "/opt/airflow/data/twitter/errorlog.txt"
 
-RAW_DIR = "/home/leonardo/twitter_stf/data/raw"
+SCORING_DATA_DIR = "/opt/airflow/data/twitter/botometer/scoring"
 
-ENTITIES_DATA_DIR = "/home/leonardo/twitter_stf/data/entities"
+SCORED_DATA_DIR = "/opt/airflow/data/twitter/botometer/scored"
 
-ENTITIES_CSV_DIR = "/home/leonardo/twitter_stf/data/csvs/entities"
+SCORES_CSV_DIR = "/opt/airflow/data/twitter/csvs/botometer"
 
-TWEET_DATA_DIR = "/home/leonardo/twitter_stf/data/tweets"
+RAW_DIR = "/opt/airflow/data/twitter/raw"
 
-TWEET_CSV_DIR = "/home/leonardo/twitter_stf/data/csvs/tweets"
+ENTITIES_DATA_DIR = "/opt/airflow/data/twitter/entities"
 
-USER_DATA_DIR = "/home/leonardo/twitter_stf/data/users"
+ENTITIES_CSV_DIR = "/opt/airflow/data/twitter/csvs/entities"
 
-USER_CSV_DIR = "/home/leonardo/twitter_stf/data/csvs/users"
+TWEET_DATA_DIR = "/opt/airflow/data/twitter/tweets"
+
+TWEET_CSV_DIR = "/opt/airflow/data/twitter/csvs/tweets"
+
+USER_DATA_DIR = "/opt/airflow/data/twitter/users"
+
+USER_CSV_DIR = "/opt/airflow/data/twitter/csvs/users"
 
 COUNT_COLS_DICT = {
     "tweet_quote_count": "quote_count",

@@ -1,20 +1,20 @@
 
 # Global
 
-DATA_DIR = "/home/leonardo/reddit_counter/data"
+DATA_DIR = "/opt/airflow/data/reddit"
 
 CSV_PREFIX = "reddit"
 
 CSV_SUFFIX = ".txt"
 
-ERROR_LOG_PATH = "/home/leonardo/reddit_counter/data/errorlog.txt"
+ERROR_LOG_PATH = "/opt/airflow/data/reddit/errorlog.txt"
 
 
 # Subs
 
-SUBS_RAW_DIR = "/home/leonardo/reddit_counter/data/raw/subs"
+SUBS_RAW_DIR = "/opt/airflow/data/reddit/raw/subs"
 
-SUBS_TRANSFORMED_DIR = "/home/leonardo/reddit_counter/data/transformed/subs"
+SUBS_TRANSFORMED_DIR = "/opt/airflow/data/reddit/transformed/subs"
 
 SUBS_HEADERS = [
     "DISPLAY_NAME", "TITLE", "SUBSCRIBERS", "ACTIVE_USER_COUNT", "ACCOUNTS_ACTIVE", "DAY", "HOUR", "TIMESTAMP"
@@ -25,9 +25,9 @@ SUBS_FILTER_COLUMNS = ["ID_SUB", "ACTIVE_USER_COUNT", "ACCOUNTS_ACTIVE", "SUBSCR
 
 # Users
 
-USERS_RAW_DIR = "/home/leonardo/reddit_counter/data/raw/users"
+USERS_RAW_DIR = "/opt/airflow/data/reddit/raw/users"
 
-USERS_TRANSFORMED_DIR = "/home/leonardo/reddit_counter/data/transformed/users"
+USERS_TRANSFORMED_DIR = "/opt/airflow/data/reddit/transformed/users"
 
 USERS_HEADERS = [
     "NAME", "ID", "DESCRIPTION", "CREATED", "CREATED_UTC", "VERIFIED",
@@ -52,9 +52,9 @@ USER_STATS_DB_COLUMNS = [
 
 # Posts
 
-POSTS_RAW_DIR = "/home/leonardo/reddit_counter/data/raw/posts"
+POSTS_RAW_DIR = "/opt/airflow/data/reddit/raw/posts"
 
-POSTS_TRANSFORMED_DIR = "/home/leonardo/reddit_counter/data/transformed/posts"
+POSTS_TRANSFORMED_DIR = "/opt/airflow/data/reddit/transformed/posts"
 
 POSTS_HEADERS = [
     "SUBREDDIT", "AUTHOR", "TITLE", "LINK_FLAIR_TEXT", "SCORE", "UPVOTE_RATIO", "NUM_COMMENTS", "RANK",

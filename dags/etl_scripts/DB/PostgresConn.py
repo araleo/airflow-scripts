@@ -1,18 +1,17 @@
-import os
-
 import psycopg2
 from psycopg2 import sql
 from psycopg2.extras import execute_values
 
-from .Errors import CouldNotInsertException
-from .Errors import CouldNotInsertMultipleException
+from etl_scripts.DB.constants import PSYCOPG2_CONN_STRING
+from etl_scripts.DB.Errors import CouldNotInsertException
+from etl_scripts.DB.Errors import CouldNotInsertMultipleException
 
 
 class PostgresConn:
 
     def __init__(self):
         # "dbname=database user=user password=pwd host=host"
-        self.conn = psycopg2.connect(os.environ["PSYCOPG2_CONN_STRING"])
+        self.conn = psycopg2.connect(PSYCOPG2_CONN_STRING)
         self.cur = self.conn.cursor()
 
     def get_id_or_create(self, filter_field, filter_values, fields, schema, table, insert_fields, insert_values):
@@ -44,7 +43,7 @@ class PostgresConn:
         query = self.build_insert_query(fields, schema, table)
         try:
             self.cur.execute(query, values)
-        except psycopg2.Error as e:
+        except psycopg2.Error:
             raise CouldNotInsertException
         else:
             self.conn.commit()

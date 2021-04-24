@@ -1,5 +1,0 @@
-bs4
-pandas
-psycopg2-binary
-psycopg2
-sqlalchemy

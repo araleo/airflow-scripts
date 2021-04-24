@@ -2,9 +2,9 @@
 Constants
 """
 
-DATA_DIR = "/home/leonardo/reddit_counter/data/raw"
+DATA_DIR = "/opt/airflow/data/reddit/raw"
 
-CRED_PATH = "/home/leonardo/airflow/dags/etl_scripts/reddit/extract/cred.txt"
+CRED_PATH = "/opt/airflow/dags/etl_scripts/reddit/extract/cred.txt"
 
 SUBS = [
     "brasil",

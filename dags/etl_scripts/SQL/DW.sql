@@ -217,12 +217,40 @@ CREATE TABLE twitter.hashtags
 
 CREATE TABLE twitter.medias
 (
-    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),df
     tweet_id text NOT NULL,
     twitter_id text,
     url text,
     type text,
     collection_time timestamp,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE twitter.screen_names
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
+    screen_name text UNIQUE NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE twitter.scored_tweets
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
+    tweet_id text NOT NULL,
+    text text NOT NULL,
+    mentioned_user text NOT NULL,
+    created_at timestamp NOT NULL,
+    user_screen_name text NOT NULL,
+    user_profile_image_url text NOT NULL,
+    cap integer NOT NULL,
+    astroturf integer NOT NULL,
+    fake_follower integer NOT NULL,
+    financial integer NOT NULL,
+    other integer NOT NULL,
+    overall integer NOT NULL,
+    self_declared integer NOT NULL,
+    spammer integer NOT NULL,
+    scoring_time timestamp NOT NULL,
     PRIMARY KEY (id)
 );
 

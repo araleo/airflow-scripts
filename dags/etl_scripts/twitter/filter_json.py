@@ -13,8 +13,6 @@ def filter_tweet(tweet):
     filtered["urls"] = extract_urls(tweet)
     filtered["hashtags"] = extract_hashtags(tweet)
     filtered["medias"] = extract_medias(tweet)
-    filtered["tweet_core"]["quoted_id"] = tweet.get("quoted_status").get("id") if tweet.get("quoted_status") else None
-    filtered["tweet_core"]["retweeted_id"] = tweet.get("retweeted_status").get("id") if tweet.get("retweeted_status") else None
     return filtered
 
 
@@ -22,7 +20,7 @@ def extract_tweet_core(tweet):
     filtered = dict()
     filtered["id"] = tweet.get("id")
     filtered["created_at"] = tweet.get("created_at")
-    filtered["text"] = tweet.get("text")
+    filtered["text"] = tweet.get("text") if not tweet.get("truncated") else tweet["extended_tweet"].get("full_text")
     filtered["source"] = tweet.get("source")
     filtered["in_reply_to_status_id"] = tweet.get("in_reply_to_status_id")
     filtered["in_reply_to_user_id"] = tweet.get("in_reply_to_user_id")
@@ -32,6 +30,8 @@ def extract_tweet_core(tweet):
     filtered["place"] = tweet.get("place")
     filtered["user_twitter_id"] = tweet["user"].get("id")
     filtered["timestamp_ms"] = tweet.get("timestamp_ms")
+    filtered["quoted_id"] = tweet.get("quoted_status").get("id") if tweet.get("quoted_status") else None
+    filtered["retweeted_id"] = tweet.get("retweeted_status").get("id") if tweet.get("retweeted_status") else None
     return filtered
 
 

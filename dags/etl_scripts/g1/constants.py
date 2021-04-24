@@ -2,15 +2,15 @@
 G1's package constants
 """
 
-DATA_DIR = "/home/leonardo/no_comments/data"
+DATA_DIR = "/opt/airflow/data/g1"
 
-RAW_DIR = "/home/leonardo/no_comments/data/raw"
+RAW_DIR = "/opt/airflow/data/g1/raw"
 
-TRANSFORMED_DIR = "/home/leonardo/no_comments/data/transformed"
+TRANSFORMED_DIR = "/opt/airflow/data/g1/transformed"
 
-LOADED_DIR = "/home/leonardo/no_comments/data/loaded"
+LOADED_DIR = "/opt/airflow/data/g1/loaded"
 
-ERROR_LOG_PATH = "/home/leonardo/no_comments/data/errorlog.txt"
+ERROR_LOG_PATH = "/opt/airflow/data/errorlog.txt"
 
 HEADERS = ["PAGE", "TITLE", "DESCRIPTION", "DATE", "COMMENTS", "URL", "TIMESTAMP"]
 
